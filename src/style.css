@@ -8,6 +8,7 @@ h1 {
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 ul {
   margin: 0;
@@ -44,7 +45,7 @@ li {
   width: 64px;
 }
 .weather-temperature strong {
-  color: rgb(33, 33, 33);
+  color: rgb(60, 63, 67);
   font-size: 54px;
   line-height: 1;
   font-weight: 400;
@@ -59,13 +60,21 @@ li {
   font-size: 16px;
   top: -34;
 }
-#search-form {
-  display: block;
-  margin: 10px auto;
-  padding: 5px; 10px;
-  border-radius: 8px; 
-}
-#search-btn {
-  padding: 5px 10px;
+.weather-app input[type="text"] {
+  margin-left: 150px;
+  padding: 5px 5px 5px 5px;
   border-radius: 8px;
+}
+.weather-app input[type="submit"] {
+  background-color: #1f76cc;
+  border-radius: 8px;
+  padding: 5px 5px 5px 5px;
+  margin-left: 10px;
+}
+.weather-temperature .active {
+  color: rgb(60, 63, 67);
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
 }

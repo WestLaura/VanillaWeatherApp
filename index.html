@@ -27,7 +27,7 @@
               autofocus="on"
             />
 
-            <input type="submit" id="search-btn" />
+            <input type="submit" value="Search" id="search-btn" />
           </form>
           <div class="overview">
             <h1 id="city">London</h1>
@@ -40,17 +40,23 @@
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temperature">
-                <img src="" alt="Clear" id="icon" class="float-left" />
+                <img
+                  src="https://openweathermap.org/img/wn/01d@2x.png"
+                  alt="Weather Icon"
+                  id="icon"
+                  class="float-left"
+                />
                 <div class="float-left">
                   <strong id="temperature">16</strong
-                  ><span class="celsius">°C | </span>
-                  <span class="farenheit">°F</span>
+                  ><span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="farenheit-link">°F</a></span
+                  >
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: <span id="precipitation">%</span></li>
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span> m/h</li>
               </ul>

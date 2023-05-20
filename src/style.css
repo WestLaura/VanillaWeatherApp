@@ -17,6 +17,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
   color: rgb(135, 135, 135);
   font-size: 16px;
   font-weight: 100;
@@ -44,7 +45,7 @@ li {
 }
 .weather-temperature strong {
   color: rgb(33, 33, 33);
-  font-size: 64px;
+  font-size: 54px;
   line-height: 1;
   font-weight: 400;
 }
@@ -57,4 +58,14 @@ li {
   position: relative;
   font-size: 16px;
   top: -34;
+}
+#search-form {
+  display: block;
+  margin: 10px auto;
+  padding: 5px; 10px;
+  border-radius: 8px; 
+}
+#search-btn {
+  padding: 5px 10px;
+  border-radius: 8px;
 }

@@ -11,16 +11,29 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form">
+            <input
+              type="text"
+              id="city-name"
+              placeholder="Type city here"
+              autocomplete="off"
+              autofocus="on"
+            />
+
+            <input type="submit" id="search-btn" />
+          </form>
           <div class="overview">
             <h1 id="city">London</h1>
+            <span id="date"></span>
             <ul>
-              <li>Saturday, 20 May <span id="date"></span></li>
+              <li><span id="date"></span></li>
               <li id="description">Clear</li>
             </ul>
           </div>
@@ -29,9 +42,9 @@
               <div class="d-flex weather-temperature">
                 <img src="" alt="Clear" id="icon" class="float-left" />
                 <div class="float-left">
-                  <strong id="temperature"> 16 </strong
-                  ><span class="celsius"> °C | </span>
-                  <span class="farenheit"> °F</span>
+                  <strong id="temperature">16</strong
+                  ><span class="celsius">°C | </span>
+                  <span class="farenheit">°F</span>
                 </div>
               </div>
             </div>

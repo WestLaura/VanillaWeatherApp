@@ -50,16 +50,12 @@ li {
   line-height: 1;
   font-weight: 400;
 }
-.weather-temperature celsius {
+.weather-temperature .units {
   position: relative;
-  top: -34;
   font-size: 16px;
+  top: -34px;
 }
-.weather-temperature farenheit {
-  position: relative;
-  top: -34;
-  font-size: 16px;
-}
+
 .weather-app input[type="text"] {
   margin-left: 150px;
   padding: 5px 5px 5px 5px;

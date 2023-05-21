@@ -46,19 +46,19 @@ li {
 }
 .weather-temperature strong {
   color: rgb(60, 63, 67);
-  font-size: 54px;
+  font-size: 64px;
   line-height: 1;
   font-weight: 400;
 }
-.weather-temperature .celsius {
+.weather-temperature celsius {
   position: relative;
-  font-size: 16px;
   top: -34;
+  font-size: 16px;
 }
-.weather-temperature .farenheit {
+.weather-temperature farenheit {
   position: relative;
-  font-size: 16px;
   top: -34;
+  font-size: 16px;
 }
 .weather-app input[type="text"] {
   margin-left: 150px;

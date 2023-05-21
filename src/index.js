@@ -37,7 +37,7 @@ function show(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -63,9 +63,6 @@ function handleSubmit(event) {
   axios.get(apiUrl).then(show);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 function displayFarenheitTemp(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -83,6 +80,8 @@ function displayCelsiusTemp(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 let celsiusTemperature = null;
 
 let farenheitLink = document.querySelector("#farenheit-link");

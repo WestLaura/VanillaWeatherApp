@@ -30,35 +30,52 @@ function formatDate(timestamp) {
   return `Last Updated: ${hours}:${mins}, ${day} ${today} ${month}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [" Sun", " Mon", " Tue", " Wed", " Thu", " Fri", " Sat"];
+
+  return days[day];
+}
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="col-2">
-                <div class="weather-forecast-date">${forecastDay.dt}</div>
+                <div class="weather-forecast-date">${formatDay(
+                  forecastDay.dt
+                )}</div>
+              
                 <img
-                  src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+                  src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
                   alt=""
                   width="42"
                 />
                 <div class="weather-forecast-temperatures">
-                  <span class="weather-forecast-temperature-max"> ${forecastDay.temp.max}° </span>
-                  <span class="weather-forecast-temperature-min"> ${forecastDay.temp.min}° </span>
+                  <span class="weather-forecast-temperature-max"> ${Math.round(
+                    forecastDay.temp.max
+                  )}° </span>
+                  <span class="weather-forecast-temperature-min"> ${Math.round(
+                    forecastDay.temp.min
+                  )}° </span>
                 </div>
               </div>
             `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "a95c2c6739994ba4903e007ee817e7d1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
@@ -99,23 +116,6 @@ function handleSubmit(event) {
   axios.get(apiUrl).then(show);
 }
 
-function displayFarenheitTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
-  let farenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(farenheitTemp);
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  farenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
 function searchCity(city) {
   let units = "metric";
   let apiKey = "a2dda52dce059eb8a14e95aaa0db6ab7";
@@ -128,11 +128,5 @@ function searchCity(city) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 let celsiusTemperature = null;
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", displayFarenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 searchCity("Salisbury");

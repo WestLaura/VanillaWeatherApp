@@ -1,14 +1,15 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: #113f67;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/083/197/original/pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-19670.jpg?1685038797");
 }
 
 h1 {
-  color: #878787;
-  font-size: 24px;
-  font-weight: 100;
+  font-size: 28px;
+  font-weight: 200;
   line-height: 28px;
   margin-bottom: 0;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 ul {
   margin: 0;
@@ -19,17 +20,24 @@ li {
   margin: 0;
   padding: 0;
   text-transform: capitalize;
-  color: rgb(135, 135, 135);
+
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
 }
 .weather-app {
+  background: radial-gradient(
+    506px at 50.6% 16.5%,
+    rgb(239, 252, 250) 5.5%,
+    rgb(154, 192, 206) 100.2%
+  );
   max-width: 600px;
   display: block;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #dadde1;
+  margin: 100px auto;
+  margin-bottom: 5px;
+  padding: 30px;
+  border: 3px solid #79c2d0;
+
   border-radius: 10px;
 }
 .weather-app-wrapper {
@@ -45,7 +53,6 @@ li {
   width: 64px;
 }
 .weather-temperature strong {
-  color: rgb(60, 63, 67);
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -57,38 +64,36 @@ li {
 }
 
 .weather-app input[type="text"] {
-  margin-left: 150px;
+  margin-left: 120px;
   padding: 5px 5px 5px 5px;
+  background-color: #79c2d0;
+  color: rgb(162, 158, 158);
+  border: none;
   border-radius: 8px;
 }
 .weather-app input[type="submit"] {
-  background-color: #1f76cc;
+  background-color: #79c2d0;
+  color: rgb(162, 158, 158);
+  border: none;
   border-radius: 8px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 15px 5px 15px;
   margin-left: 10px;
 }
-.weather-temperature .active {
-  color: rgb(60, 63, 67);
-  cursor: default;
-}
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
+
 .forecast {
   margin-top: 20px;
   text-align: center;
-  color: #000;
 }
 
-.forecast-date {
+.weather-forecast-date {
   font-size: 16px;
   opacity: 0.5;
 }
 
-.forecast-temperature-min {
+.weather-forecast-temperature-min {
   opacity: 0.5;
 }
 
-.forecast-temperatures {
-  font-size: 13px;
+.weather-forecast-temperatures {
+  font-size: 14px;
 }
